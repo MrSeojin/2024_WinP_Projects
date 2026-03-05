@@ -4,7 +4,7 @@
 using namespace std;
 
 default_random_engine dre;
-uniform_int_distribution uid(1, 50);
+uniform_int_distribution<int> uid(1, 50);
 
 int main() 
 {
@@ -148,7 +148,7 @@ int main()
 		case 'r':
 			if (true) {
 				default_random_engine dre;
-				uniform_int_distribution uid(0, 19);
+				uniform_int_distribution<int> uid(0, 19);
 				int sec[20];
 				for (int i = 0; i < 20; ++i) {
 					sec[i] = numbers[uid(dre)];
