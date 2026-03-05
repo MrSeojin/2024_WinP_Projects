@@ -4,4 +4,5 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="WinP_01_01/WinP_01_01.vcxproj" />
+  <Project Path="WinP_01_02/WinP_01_02.vcxproj" />
 </Solution>
