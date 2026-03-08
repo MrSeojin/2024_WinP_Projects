@@ -72,7 +72,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			str[yCount][xCount++] = wParam;
 		str[yCount][xCount] = '\0';
 
-		InvalidateRect(hWnd, NULL, TRUE);
+		InvalidateRect(hWnd, NULL, true);
 		ReleaseDC(hWnd, hDC);
 		break;
 	case WM_PAINT:
