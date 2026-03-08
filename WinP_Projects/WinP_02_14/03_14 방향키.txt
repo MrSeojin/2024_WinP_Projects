@@ -1,0 +1,733 @@
+		else if (wParam == 'w') {							// 상
+			// player 이동
+			if (player.top == 30) {
+				player.bottom = 930;
+				player.top = 885;
+			}
+			else {
+				player.bottom -= 45;
+				player.top -= 45;
+			}
+			//------------
+
+			// 숫자
+			for (int i = 0; i < Printnum; ++i) {
+				if (num[i].Cheak==0);
+				else {
+					if (player.top == num[i].rect.top && player.left == num[i].rect.left) {
+						// num[i].rect 이동
+						if (num[i].rect.top == 30) {
+							num[i].rect.bottom = 930;
+							num[i].rect.top = 885;
+						}
+						else {
+							num[i].rect.bottom -= 45;
+							num[i].rect.top -= 45;
+						}
+						//-----------------
+
+						//숫자
+						for (int j = 0; j < Printnum; ++j) {
+							if (num[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == num[j].rect.top && num[i].rect.left == num[j].rect.left) {
+									if (Mod == 3) {
+										num[i].Cheak = 0;
+										num[j].print += num[i].print;
+										while (num[j].print >= 10)
+											num[j].print -= 10;
+									}
+									else {
+										if (player.bottom == 930) {
+											player.bottom = 75;
+											player.top = 30;
+										}
+										else {
+											player.bottom += 45;
+											player.top += 45;
+										}
+										if (num[i].rect.bottom == 930) {
+											num[i].rect.bottom = 75;
+											num[i].rect.top = 30;
+										}
+										else {
+											num[i].rect.bottom += 45;
+											num[i].rect.top += 45;
+										}
+									}
+								}
+							}
+						}
+						// 알파벳
+						for (int j = 0; j < Printalp; ++j) {
+							if (alp[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == alp[j].rect.top && num[i].rect.left == alp[j].rect.left) {
+									if (Mod == 2) {
+										if (player.bottom == 930) {
+											player.bottom = 75;
+											player.top = 30;
+										}
+										else {
+											player.bottom += 45;
+											player.top += 45;
+										}
+										if (num[i].rect.bottom == 930) {
+											num[i].rect.bottom = 75;
+											num[i].rect.top = 30;
+										}
+										else {
+											num[i].rect.bottom += 45;
+											num[i].rect.top += 45;
+										}
+									}
+									else {
+										num[i].Cheak = 0;
+										alp[j].print += num[i].print;
+										if (alp[j].print >= 26)
+											alp[j].print -= 26;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			// 알파벳
+			for (int i = 0; i < Printalp; ++i) {
+				if (alp[i].Cheak == 0);
+				else {
+					if (player.top == alp[i].rect.top && player.left == alp[i].rect.left) {
+						// alp[i].rect 이동
+						if (alp[i].rect.top == 30) {
+							alp[i].rect.bottom = 930;
+							alp[i].rect.top = 885;
+						}
+						else {
+							alp[i].rect.bottom -= 45;
+							alp[i].rect.top -= 45;
+						}
+						//-----------------
+
+						// 숫자
+						for (int j = 0; j < Printnum; ++j) {
+							if (num[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == num[j].rect.top && num[i].rect.left == num[j].rect.left) {
+									if (Mod == 1) {
+										if (player.bottom == 930) {
+											player.bottom = 75;
+											player.top = 30;
+										}
+										else {
+											player.bottom += 45;
+											player.top += 45;
+										}
+										if (alp[i].rect.bottom == 930) {
+											alp[i].rect.bottom = 75;
+											alp[i].rect.top = 30;
+										}
+										else {
+											alp[i].rect.bottom += 45;
+											alp[i].rect.top += 45;
+										}
+									}
+									else {
+										alp[i].Cheak = 0;
+										num[j].print += alp[i].print;
+										if (alp[j].print >= 26)
+											alp[j].print -= 26;
+									}
+								}
+							}
+						}
+						// 알파벳
+						for (int j = 0; j < Printalp; ++j) {
+							if (alp[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == alp[j].rect.top && num[i].rect.left == alp[j].rect.left) {
+									if (Mod == 3) {
+										alp[i].Cheak = 0;
+										alp[j].print += alp[i].print;
+										if (alp[j].print >= 26)
+											alp[j].print -= 26;
+									}
+									else {
+										if (player.bottom == 930) {
+											player.bottom = 75;
+											player.top = 30;
+										}
+										else {
+											player.bottom += 45;
+											player.top += 45;
+										}
+										if (alp[i].rect.bottom == 930) {
+											alp[i].rect.bottom = 75;
+											alp[i].rect.top = 30;
+										}
+										else {
+											alp[i].rect.bottom += 45;
+											alp[i].rect.top += 45;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		else if (wParam == 'a') {							// 좌
+			// player 이동
+			if (player.left == 40) {
+				player.right = 940;
+				player.left = 895;
+			}
+			else {
+				player.right -= 45;
+				player.left -= 45;
+			}
+			//------------
+
+			// 숫자
+			for (int i = 0; i < Printnum; ++i) {
+				if (num[i].Cheak == 0);
+				else {
+					if (player.top == num[i].rect.top && player.left == num[i].rect.left) {
+						// num[i].rect 이동
+						if (num[i].rect.left == 40) {
+							num[i].rect.right = 940;
+							num[i].rect.left = 895;
+						}
+						else {
+							num[i].rect.right -= 45;
+							num[i].rect.left -= 45;
+						}
+						//-----------------
+
+						//숫자
+						for (int j = 0; j < Printnum; ++j) {
+							if (num[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == num[j].rect.top && num[i].rect.left == num[j].rect.left) {
+									if (Mod == 3) {
+										num[i].Cheak = 0;
+										num[j].print += num[i].print;
+										while (num[j].print >= 10)
+											num[j].print -= 10;
+										break;
+									}
+									else {
+										if (player.right == 940) {
+											player.right = 85;
+											player.left = 40;
+										}
+										else {
+											player.right += 45;
+											player.left += 45;
+										}
+										if (num[i].rect.right == 940) {
+											num[i].rect.right = 85;
+											num[i].rect.left = 40;
+										}
+										else {
+											num[i].rect.right += 45;
+											num[i].rect.left += 45;
+										}
+										break;
+									}
+								}
+							}
+						}
+						// 알파벳
+						for (int j = 0; j < Printalp; ++j) {
+							if (alp[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == alp[j].rect.top && num[i].rect.left == alp[j].rect.left) {
+									if (Mod == 2) {
+										if (player.right == 940) {
+											player.right = 85;
+											player.left = 40;
+										}
+										else {
+											player.right += 45;
+											player.left += 45;
+										}
+										if (num[i].rect.right == 940) {
+											num[i].rect.right = 85;
+											num[i].rect.left = 40;
+										}
+										else {
+											num[i].rect.right += 45;
+											num[i].rect.left += 45;
+											break;
+										}
+									}
+									else {
+										num[i].Cheak = 0;
+										alp[j].print += num[i].print;
+										if (alp[j].print >= 26)
+											alp[j].print -= 26;
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			// 알파벳
+			for (int i = 0; i < Printalp; ++i) {
+				if (alp[i].Cheak==0);
+				else {
+					if (player.top == alp[i].rect.top && player.left == alp[i].rect.left) {
+						// alp[i].rect 이동
+						if (alp[i].rect.left == 40) {
+							alp[i].rect.bottom = 930;
+							alp[i].rect.top = 885;
+						}
+						else {
+							alp[i].rect.bottom -= 45;
+							alp[i].rect.top -= 45;
+						}
+						//-----------------
+
+						// 숫자
+						for (int j = 0; j < Printnum; ++j) {
+							if (num[j].Cheak == 0);
+							else {
+								if (alp[i].rect.top == num[j].rect.top && alp[i].rect.left == num[j].rect.left) {
+									if (Mod == 1) {
+										if (player.right == 940) {
+											player.right = 85;
+											player.left = 40;
+										}
+										else {
+											player.right += 45;
+											player.left += 45;
+										}
+										if (alp[i].rect.right == 940) {
+											alp[i].rect.right = 85;
+											alp[i].rect.left = 40;
+										}
+										else {
+											alp[i].rect.right += 45;
+											alp[i].rect.left += 45;
+										}
+										break;
+									}
+									else {
+										alp[i].Cheak = 0;
+										num[j].print += alp[i].print;
+										if (alp[j].print >= 26)
+											alp[j].print -= 26;
+										break;
+									}
+								}
+							}
+						}
+						// 알파벳
+						for (int j = 0; j < Printalp; ++j) {
+							if (alp[j].Cheak == 0);
+							else {
+								if (alp[i].rect.top == alp[j].rect.top && alp[i].rect.bottom == alp[j].rect.bottom) {
+									if (Mod == 3) {
+										alp[i].Cheak = 0;
+										alp[j].print += alp[i].print;
+										if (alp[i].print >= 26)
+											alp[i].print -= 26;
+										break;
+									}
+									else {
+										if (player.right == 940) {
+											player.right = 85;
+											player.left = 40;
+										}
+										else {
+											player.right += 45;
+											player.left += 45;
+										}
+										if (alp[i].rect.right == 940) {
+											alp[i].rect.right = 85;
+											alp[i].rect.left = 40;
+										}
+										else {
+											alp[i].rect.right += 45;
+											alp[i].rect.left += 45;
+										}
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		else if (wParam == 's') {							// 하
+			// player 이동
+			if (player.bottom == 930) {
+				player.top = 30;
+				player.bottom = 75;
+			}
+			else {
+				player.bottom += 45;
+				player.top += 45;
+			}
+			//------------
+
+			// 숫자
+			for (int i = 0; i < Printnum; ++i) {
+				if (num[i].Cheak==0);
+				else {
+					if (player.top == num[i].rect.top && player.left == num[i].rect.left) {
+						// num[i].rect 이동
+						if (num[i].rect.bottom == 930) {
+							num[i].rect.bottom = 75;
+							num[i].rect.top = 30;
+						}
+						else {
+							num[i].rect.bottom += 45;
+							num[i].rect.top += 45;
+						}
+						//-----------------
+
+						//숫자
+						for (int j = 0; j < Printnum; ++j) {
+							if (num[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == num[j].rect.top && num[i].rect.left == num[j].rect.left) {
+									if (Mod == 3) {
+										num[i].Cheak = 0;
+										num[j].print += num[i].print;
+										while (num[j].print >= 10)
+											num[j].print -= 10;
+									}
+									else {
+										if (player.bottom == 30) {
+											player.bottom = 930;
+											player.top = 885;
+										}
+										else {
+											player.bottom -= 45;
+											player.top -= 45;
+										}
+										if (num[i].rect.top == 30) {
+											num[i].rect.bottom = 930;
+											num[i].rect.top = 885;
+										}
+										else {
+											num[i].rect.bottom -= 45;
+											num[i].rect.top -= 45;
+										}
+									}
+								}
+							}
+						}
+						// 알파벳
+						for (int j = 0; j < Printalp; ++j) {
+							if (alp[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == alp[j].rect.top && num[i].rect.left == alp[j].rect.left) {
+									if (Mod == 2) {
+										if (player.bottom == 30) {
+											player.bottom = 930;
+											player.top = 885;
+										}
+										else {
+											player.bottom -= 45;
+											player.top -= 45;
+										}
+										if (num[i].rect.top == 30) {
+											num[i].rect.bottom = 930;
+											num[i].rect.top = 885;
+										}
+										else {
+											num[i].rect.bottom -= 45;
+											num[i].rect.top -= 45;
+										}
+									}
+									else {
+										num[i].Cheak = 0;
+										alp[j].print += num[i].print;
+										if (alp[j].print >= 26)
+											alp[j].print -= 26;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			// 알파벳
+			for (int i = 0; i < Printalp; ++i) {
+				if (alp[i].Cheak == 0);
+				else {
+					if (player.top == alp[i].rect.top && player.left == alp[i].rect.left) {
+						// alp[i].rect 이동
+						if (alp[i].rect.bottom == 930) {
+							alp[i].rect.bottom = 75;
+							alp[i].rect.top = 30;
+						}
+						else {
+							alp[i].rect.bottom += 45;
+							alp[i].rect.top += 45;
+						}
+						//-----------------
+
+						// 숫자
+						for (int j = 0; j < Printnum; ++j) {
+							if (num[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == num[j].rect.top && num[i].rect.left == num[j].rect.left) {
+									if (Mod == 1) {
+										if (player.bottom == 930) {
+											player.bottom = 75;
+											player.top = 30;
+										}
+										else {
+											player.bottom -= 45;
+											player.top -= 45;
+										}
+										if (alp[i].rect.top == 30) {
+											alp[i].rect.bottom = 930;
+											alp[i].rect.top = 885;
+										}
+										else {
+											alp[i].rect.bottom -= 45;
+											alp[i].rect.top -= 45;
+										}
+									}
+									else {
+										alp[i].Cheak = 0;
+										num[j].print += alp[i].print;
+										if (alp[j].print >= 26)
+											alp[j].print -= 26;
+									}
+								}
+							}
+						}
+						// 알파벳
+						for (int j = 0; j < Printalp; ++j) {
+							if (alp[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == alp[j].rect.top && num[i].rect.left == alp[j].rect.left) {
+									if (Mod == 3) {
+										alp[i].Cheak = 0;
+										alp[j].print += alp[i].print;
+										if (alp[j].print >= 26)
+											alp[j].print -= 26;
+									}
+									else {
+										if (player.bottom == 930) {
+											player.bottom = 75;
+											player.top = 30;
+										}
+										else {
+											player.bottom -= 45;
+											player.top -= 45;
+										}
+										if (alp[i].rect.top == 30) {
+											alp[i].rect.bottom = 930;
+											alp[i].rect.top = 885;
+										}
+										else {
+											alp[i].rect.bottom -= 45;
+											alp[i].rect.top -= 45;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		else if (wParam == 'd') {							// 우
+			// player 이동
+			if (player.right == 940) {
+				player.left = 40;
+				player.right = 85;
+			}
+			else {
+				player.right += 45;
+				player.left += 45;
+			}
+			//------------
+
+			// 숫자
+			for (int i = 0; i < Printnum; ++i) {
+				if (num[i].Cheak == 0);
+				else {
+					if (player.top == num[i].rect.top && player.left == num[i].rect.left) {
+						// num[i].rect 이동
+						if (num[i].rect.right == 940) {
+							num[i].rect.right = 85;
+							num[i].rect.left = 40;
+						}
+						else {
+							num[i].rect.right += 45;
+							num[i].rect.left += 45;
+							break;
+						}
+						//-----------------
+
+						//숫자
+						for (int j = 0; j < Printnum; ++j) {
+							if (num[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == num[j].rect.top && num[i].rect.left == num[j].rect.left) {
+									if (Mod == 3) {
+										num[i].Cheak = 0;
+										num[j].print += num[i].print;
+										while (num[j].print >= 10)
+											num[j].print -= 10;
+										break;
+									}
+									else {
+										if (player.left == 40) {
+											player.right = 940;
+											player.left = 895;
+										}
+										else {
+											player.right -= 45;
+											player.left -= 45;
+										}
+										if (num[i].rect.left == 40) {
+											num[i].rect.right = 940;
+											num[i].rect.left = 895;
+										}
+										else {
+											num[i].rect.right -= 45;
+											num[i].rect.left -= 45;
+										}
+										break;
+									}
+								}
+							}
+						}
+						// 알파벳
+						for (int j = 0; j < Printalp; ++j) {
+							if (alp[j].Cheak == 0);
+							else {
+								if (num[i].rect.top == alp[j].rect.top && num[i].rect.left == alp[j].rect.left) {
+									if (Mod == 2) {
+										if (player.left == 40) {
+											player.right = 940;
+											player.left = 895;
+										}
+										else {
+											player.right -= 45;
+											player.left -= 45;
+										}
+										if (num[i].rect.left == 40) {
+											num[i].rect.right = 940;
+											num[i].rect.left = 895;
+										}
+										else {
+											num[i].rect.right -= 45;
+											num[i].rect.left -= 45;
+										}
+										break;
+									}
+									else {
+										num[i].Cheak = 0;
+										alp[j].print += num[i].print;
+										if (alp[j].print >= 26)
+											alp[j].print -= 26;
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			// 알파벳
+			for (int i = 0; i < Printalp; ++i) {
+				if (alp[i].Cheak==0);
+				else {
+					if (player.top == alp[i].rect.top && player.left == alp[i].rect.left) {
+						// alp[i].rect 이동
+						if (alp[i].rect.right == 940) {
+							alp[i].rect.right = 85;
+							alp[i].rect.left = 40;
+						}
+						else {
+							alp[i].rect.right += 45;
+							alp[i].rect.left += 45;
+						}
+						//-----------------
+
+						// 숫자
+						for (int j = 0; j < Printnum; ++j) {
+							if (num[j].Cheak == 0);
+							else {
+								if (alp[i].rect.top == num[j].rect.top && alp[i].rect.left == num[j].rect.left) {
+									if (Mod == 1) {
+										if (player.left == 40) {
+											player.right = 940;
+											player.left = 895;
+										}
+										else {
+											player.right -= 45;
+											player.left -= 45;
+										}
+										if (alp[i].rect.left == 40) {
+											alp[i].rect.bottom = 930;
+											alp[i].rect.top = 885;
+										}
+										else {
+											alp[i].rect.bottom -= 45;
+											alp[i].rect.top -= 45;
+										}
+										break;
+									}
+									else {
+										alp[i].Cheak = 0;
+										num[j].print += alp[i].print;
+										if (alp[j].print >= 26)
+											alp[j].print -= 26;
+										break;
+									}
+								}
+							}
+						}
+						// 알파벳
+						for (int j = 0; j < Printalp; ++j) {
+							if (alp[j].Cheak == 0);
+							else {
+								if (alp[i].rect.top == alp[j].rect.top && alp[i].rect.bottom == alp[j].rect.bottom) {
+									if (Mod == 3) {
+										alp[i].Cheak = 0;
+										alp[j].print += alp[i].print;
+										if (alp[i].print >= 26)
+											alp[i].print -= 26;
+										break;
+									}
+									else {
+										if (player.left == 40) {
+											player.right = 940;
+											player.left = 895;
+										}
+										else {
+											player.right -= 45;
+											player.left -= 45;
+										}
+										if (alp[i].rect.left == 40) {
+											alp[i].rect.bottom = 930;
+											alp[i].rect.top = 885;
+										}
+										else {
+											alp[i].rect.bottom -= 45;
+											alp[i].rect.top -= 45;
+										}
+										break;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
